@@ -1,23 +1,18 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-// 组件按需引入插件
-import Compoents from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { wrapperEnv } from './build/utils';
+import { createVitePlugins } from './build/vite/plugin';
+import { loadEnv } from 'vite';
+
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
 }
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    // Compoents({
-    //   resolvers: [
-    //     AntDesignVueResolver()
-    //   ]
-    // })
-  ],
+  plugins: createVitePlugins(true),
   resolve: {
     alias: [
       // /@/xxxx => src/xxxx

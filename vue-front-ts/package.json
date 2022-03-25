@@ -10,8 +10,10 @@
   "dependencies": {
     "@types/node": "^17.0.21",
     "ant-design-vue": "^2.2.8",
+    "consola": "^2.15.3",
     "less": "^4.1.2",
     "unplugin-vue-components": "^0.18.3",
+    "vite-plugin-style-import": "^2.0.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },
